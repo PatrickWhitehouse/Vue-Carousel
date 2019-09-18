@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
-    <ul class="products">
+    <div class="wrapper">
+      <ul class="products">
       <Product 
       v-for="product in products" 
       :key="product.code" 
@@ -11,7 +12,8 @@
       :image="product.productImageUrl"
       :alt="product.productImageAltText"
       :url="product.url"/>
-    </ul>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -40,6 +42,16 @@ export default {
 
 img{
   max-width: 100%;
+}
+
+ul, li{
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
 }
 
 #app {

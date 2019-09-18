@@ -27,7 +27,7 @@ export default {
 /* Product wrapper */
 .products{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 /* Products*/
@@ -35,5 +35,6 @@ export default {
     display: inline-flex;
     flex-direction: column;
     padding: 10px;
+    width: (100% / 3);
 }
 </style>
