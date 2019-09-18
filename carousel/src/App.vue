@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
-    <div class="wrapper">
+    <div class="wrapper" ref="productWrapper">
       <ul class="products">
       <Product 
       v-for="product in products" 
@@ -32,6 +32,7 @@ export default {
       products: JSON.carouselData
     }
   }
+
 }
 </script>
 

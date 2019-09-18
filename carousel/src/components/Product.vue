@@ -1,5 +1,5 @@
 <template>
-    <li class="product">
+    <li class="product" ref="product">
         <img :src="image" :alt="alt" class="product__image">
         <span class="product__name">{{name}}</span>
         <span class="product__price" v-if="currency == 'GBP'">£{{price}}</span>
@@ -18,6 +18,12 @@ export default {
         image: String,
         url: String,
         alt: String
+    },
+    mounted(){
+        console.log("products loaded");
+    },
+    methods: {
+       
     }
 }
 </script>
