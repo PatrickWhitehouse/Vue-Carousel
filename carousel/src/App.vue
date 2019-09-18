@@ -1,15 +1,18 @@
 <template>
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
+    <Product/>
   </div>
 </template>
 
 <script>
 
+import Product from "./components/Product";
+
 export default {
   name: 'app',
   components: {
-    
+    Product
   }
 }
 </script>
