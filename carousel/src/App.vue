@@ -2,7 +2,7 @@
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
     <div class="products">
-      <Product v-for="product in products" :key="product.code" name="Test" price="30" url="lorem"/>
+      <Product v-for="product in products" :key="product.code" :name="product.code" :currency="product.price.currency" :price="product.price.formattedValue" :url="lorem"/>
     </div>
   </div>
 </template>
