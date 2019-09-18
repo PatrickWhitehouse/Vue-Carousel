@@ -8,8 +8,7 @@
       :name="product.code" 
       :currency="product.price.currency" 
       :price="product.price.formattedValue" 
-      :image="product.productImageUrl"
-      :url="lorem"/>
+      :image="product.productImageUrl"/>
     </div>
   </div>
 </template>

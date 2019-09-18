@@ -14,8 +14,7 @@ export default {
         name: String,
         currency: String,
         price: String,
-        image: String,
-        url: String
+        image: String
     }
 }
 </script>
