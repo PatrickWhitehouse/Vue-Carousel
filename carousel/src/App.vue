@@ -2,7 +2,8 @@
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
     <Product name="Test" price="30" url="lorem"/>
-    <p>{{products.numberOfItems}}</p>
+    <p>{{products[0].code}}</p>
+    
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
   },
   data(){
     return{
-      products: JSON
+      products: JSON.carouselData
     }
   }
 }
