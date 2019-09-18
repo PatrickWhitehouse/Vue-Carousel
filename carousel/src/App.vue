@@ -2,6 +2,9 @@
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
     <Product/>
+    <Product/>
+    <Product/>
+    <Product/>
   </div>
 </template>
 
@@ -18,6 +21,14 @@ export default {
 </script>
 
 <style>
+*{
+  box-sizing: border-box;
+}
+
+img{
+  max-width: 100%;
+}
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
