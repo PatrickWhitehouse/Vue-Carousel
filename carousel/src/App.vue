@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
-    <Product name="Test" price="30" url="lorem"/>
-    <p>{{products[0].code}}</p>
-    
+    <div class="products">
+      <Product v-for="product in products" :key="product.code" name="Test" price="30" url="lorem"/>
+    </div>
   </div>
 </template>
 

@@ -18,10 +18,18 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
 /* Product wrapper */
+.products{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Products*/
 .product{
     display: inline-flex;
     flex-direction: column;
+    padding: 10px;
 }
 </style>
