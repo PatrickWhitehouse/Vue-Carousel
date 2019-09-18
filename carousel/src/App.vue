@@ -5,7 +5,7 @@
       <Product 
       v-for="product in products" 
       :key="product.code" 
-      :name="product.code" 
+      :name="product.name" 
       :currency="product.price.currency" 
       :price="product.price.formattedValue" 
       :image="product.productImageUrl"/>
