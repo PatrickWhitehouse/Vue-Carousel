@@ -1,6 +1,6 @@
 <template>
     <li class="product">
-        <img :src="image" :alt="name" class="product__image">
+        <img :src="image" :alt="alt" class="product__image">
         <span class="product__name">{{name}}</span>
         <span class="product__price" v-if="currency == 'GBP'">£{{price}}</span>
         <span class="product__price" v-else>{{currency}}{{price}}</span>
@@ -16,7 +16,8 @@ export default {
         currency: String,
         price: String,
         image: String,
-        url: String
+        url: String,
+        alt: String
     }
 }
 </script>

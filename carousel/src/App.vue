@@ -9,6 +9,7 @@
       :currency="product.price.currency" 
       :price="product.price.formattedValue" 
       :image="product.productImageUrl"
+      :alt="product.productImageAltText"
       :url="product.url"/>
     </ul>
   </div>
