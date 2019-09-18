@@ -1,11 +1,11 @@
 <template>
-    <div class="product">
+    <li class="product">
         <img :src="image" :alt="name" class="product__image">
         <span class="product__name">{{name}}</span>
         <span class="product__price" v-if="currency == 'GBP'">£{{price}}</span>
         <span class="product__price" v-else>{{currency}}{{price}}</span>
         <a :href="url" class="product__action" target="_blank">View Product</a>
-    </div>
+    </li>
 </template>
 
 <script>
