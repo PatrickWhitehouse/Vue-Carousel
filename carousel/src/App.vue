@@ -29,9 +29,18 @@ export default {
   },
   data(){
     return{
-      products: JSON.carouselData
+      products: JSON.carouselData,
+      slides: 3
     }
-  }
+  },
+  mounted(){
+        console.log(this.getProducts());
+    },
+    methods: {
+       getProducts(){
+           return document.querySelectorAll('.product').length;
+       }
+    }
 
 }
 </script>

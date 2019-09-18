@@ -21,9 +21,7 @@ export default {
     },
     mounted(){
         console.log("products loaded");
-    },
-    methods: {
-       
+        
     }
 }
 </script>
