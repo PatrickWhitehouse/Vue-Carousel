@@ -13,7 +13,7 @@ export default {
     props: {
         name: String,
         currency: String,
-        price: Number,
+        price: String,
         image: String,
         url: String
     }
