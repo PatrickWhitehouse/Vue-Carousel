@@ -1,15 +1,20 @@
 <template>
     <div class="product">
         <img src="https://placehold.it/200" alt="Product Name" class="product__image">
-        <span class="product__name">Product Name</span>
-        <span class="product__price">Product Price</span>
+        <span class="product__name">{{name}}</span>
+        <span class="product__price">{{price}}</span>
         <button class="product__action">View Product</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'product'
+    name: 'product',
+    props: {
+        name: String,
+        price: Number,
+        url: String
+    }
 }
 </script>
 

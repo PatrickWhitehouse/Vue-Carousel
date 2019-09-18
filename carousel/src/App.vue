@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
-    <Product/>
-    <Product/>
-    <Product/>
-    <Product/>
+    <Product name="Test" price="30" url="lorem"/>
   </div>
 </template>
 
