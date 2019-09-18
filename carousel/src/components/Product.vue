@@ -4,7 +4,7 @@
         <span class="product__name">{{name}}</span>
         <span class="product__price" v-if="currency == 'GBP'">£{{price}}</span>
         <span class="product__price" v-else>{{currency}}{{price}}</span>
-        <button class="product__action">View Product</button>
+        <a :href="url" class="product__action" target="_blank">View Product</a>
     </div>
 </template>
 
@@ -15,7 +15,8 @@ export default {
         name: String,
         currency: String,
         price: String,
-        image: String
+        image: String,
+        url: String
     }
 }
 </script>
