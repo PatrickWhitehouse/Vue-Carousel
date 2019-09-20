@@ -64,11 +64,13 @@ export default {
       
       // Grab buttons
       nextBtn.addEventListener('click', ()=>{
+        slider.style.transition = 'ease-in-out .25s all';
         slideCount++;
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       });
 
       prevBtn.addEventListener('click', ()=>{
+        slider.style.transition = 'ease-in-out .25s all';
         slideCount--;
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       });
@@ -77,7 +79,9 @@ export default {
         console.log('transition ended');
         if( slideCount == sliderItems.length){
           console.log('limit hit');
+          slider.style.transition = 'none';
           slideCount = sliderItems.length - slideCount;
+           slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
         }
       });
 
