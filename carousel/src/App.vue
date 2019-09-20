@@ -40,14 +40,19 @@ export default {
   methods: {
     slider(){
       
+      // Get items, slider wrapper, slider items and actions
       const slider = document.querySelector('.products');
       const sliderItems = document.querySelectorAll('.product');
       const nextBtn = document.querySelector('.next');
       const prevBtn = document.querySelector('.prev');
 
+      // Counter to keep track of slide selected.
       let slideCount = 1;
+
+      // Get width of image so the slider can slide that amount
       const sliderItemSize = sliderItems[0].clientWidth;
       
+      // Grab buttons
       nextBtn.addEventListener('click', ()=>{
         slideCount++;
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
@@ -58,6 +63,11 @@ export default {
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       });
 
+      // Clone first product and add to the end. Clone last product, add to start.
+      const firstItem = slider.firstChild.cloneNode(true);
+      const lastItem = slider.lastChild.cloneNode(true);
+      slider.append(firstItem);
+      slider.prepend(lastItem);
 
     }
   }
