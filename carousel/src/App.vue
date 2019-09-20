@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
-    <div class="wrapper" ref="productWrapper">
+    <div class="wrapper">
       <ul class="products">
       <Product 
       v-for="product in products" 
@@ -14,6 +14,7 @@
       :url="product.url"/>
       </ul>
     </div>
+    <button class="next">Next</button>
   </div>
 </template>
 
@@ -31,6 +32,15 @@ export default {
     return{
       products: JSON.carouselData,
       slides: 3
+    }
+  },
+  mounted(){
+    this.slider();
+  },
+  methods: {
+    slider(){
+      const slider = document.querySelector('.products');
+      const sliderItems = document.querySelectorAll('.product');
     }
   }
 
