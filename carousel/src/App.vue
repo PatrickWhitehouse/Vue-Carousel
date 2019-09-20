@@ -14,8 +14,8 @@
       :alt="product.productImageAltText"
       :url="product.url"/>
       </ul>
-      <button class="prev">Previous</button>
-      <button class="next">Next</button>
+      <button class="action prev">Previous</button>
+      <button class="action next">Next</button>
     </div>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
       // Counter to keep track of slide selected.
       let slideCount = 1;
 
-      // Get width of image so the slider can slide that amount
+      // Get width of image so the slider can slide that amount, also grabs the first image to make sure its hidden.
       const sliderItemSize = sliderItems[0].clientWidth;
 
       // Clone first product and add to the end. Clone last product, add to start.
