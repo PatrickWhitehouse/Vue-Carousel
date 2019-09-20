@@ -51,6 +51,16 @@ export default {
 
       // Get width of image so the slider can slide that amount
       const sliderItemSize = sliderItems[0].clientWidth;
+
+      // Clone first product and add to the end. Clone last product, add to start.
+      const firstItem = slider.firstChild.cloneNode(true);
+      const lastItem = slider.lastChild.cloneNode(true);
+      slider.append(firstItem);
+      slider.prepend(lastItem);
+
+      // Start slide on 2nd item.
+
+       slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       
       // Grab buttons
       nextBtn.addEventListener('click', ()=>{
@@ -63,11 +73,6 @@ export default {
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       });
 
-      // Clone first product and add to the end. Clone last product, add to start.
-      const firstItem = slider.firstChild.cloneNode(true);
-      const lastItem = slider.lastChild.cloneNode(true);
-      slider.append(firstItem);
-      slider.prepend(lastItem);
 
     }
   }
