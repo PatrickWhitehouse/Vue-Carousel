@@ -75,8 +75,9 @@ export default {
 
       slider.addEventListener('transitionend', () => {
         console.log('transition ended');
-        if( slideCount == sliderItems.length + 1){
+        if( slideCount == sliderItems.length){
           console.log('limit hit');
+          slideCount = sliderItems.length - slideCount;
         }
       });
 
