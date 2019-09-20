@@ -18,10 +18,6 @@ export default {
         image: String,
         url: String,
         alt: String
-    },
-    mounted(){
-        console.log("products loaded");
-        
     }
 }
 </script>
@@ -32,13 +28,13 @@ export default {
 .products{
     display: flex;
     flex-wrap: nowrap;
+    width: 100%;
+    outline: 3px solid red;
 }
 
 /* Products*/
 .product{
-    display: inline-flex;
-    flex-direction: column;
+    display: inline-block;
     padding: 10px;
-    width: (100% / 3);
 }
 </style>
