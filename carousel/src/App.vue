@@ -2,6 +2,7 @@
   <div id="app">
     <h1>Distrelec Task - Carousel</h1>
     <div class="wrapper">
+      <p>This carousel was made using Vue. I decided to make this in Vue as I have never really used Vue before and thought it would be a good excercise to grasp the basics. The products are pulled in using the data from the JSON file.</p>
       <ul class="products">
       <Product 
       v-for="product in products" 
@@ -13,9 +14,9 @@
       :alt="product.productImageAltText"
       :url="product.url"/>
       </ul>
+      <button class="prev">Previous</button>
+      <button class="next">Next</button>
     </div>
-    <button class="prev">Previous</button>
-    <button class="next">Next</button>
   </div>
 </template>
 
@@ -76,12 +77,11 @@ export default {
       });
 
       slider.addEventListener('transitionend', () => {
-        console.log('transition ended');
         if( slideCount == sliderItems.length){
           console.log('limit hit');
           slider.style.transition = 'none';
           slideCount = sliderItems.length - slideCount;
-           slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
+          slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
         }
       });
 
@@ -109,6 +109,7 @@ ul, li{
   width: 90%;
   margin: 0 auto;
   outline: 3px solid red;
+  overflow: hidden;
 }
 
 #app {

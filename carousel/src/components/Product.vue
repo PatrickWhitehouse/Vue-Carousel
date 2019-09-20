@@ -36,5 +36,11 @@ export default {
     display: inline-block;
     padding: 10px;
     min-width: (100% / 3);
+    > * {
+        display: block;
+    }
+    img{
+        margin: auto;
+    }
 }
 </style>
