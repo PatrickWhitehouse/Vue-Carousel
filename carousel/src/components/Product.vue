@@ -29,12 +29,13 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    outline: 3px solid red;
+    
 }
 
 /* Products*/
 .product{
     display: inline-block;
     padding: 10px;
+    min-width: (100% / 3);
 }
 </style>

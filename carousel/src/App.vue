@@ -41,6 +41,15 @@ export default {
     slider(){
       const slider = document.querySelector('.products');
       const sliderItems = document.querySelectorAll('.product');
+      const nextBtn = document.querySelector('.next');
+
+      let slideCount = 1;
+      const sliderItemSize = sliderItems[0].clientWidth;
+      
+      nextBtn.addEventListener('click', ()=>{
+        slideCount++;
+        slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
+      });
     }
   }
 
@@ -64,6 +73,7 @@ ul, li{
 .wrapper{
   width: 90%;
   margin: 0 auto;
+  outline: 3px solid red;
 }
 
 #app {
