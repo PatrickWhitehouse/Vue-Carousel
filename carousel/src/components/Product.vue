@@ -29,7 +29,7 @@ export default {
     display: flex;
     flex-wrap: nowrap;
     width: 100%;
-    
+    transition: ease-in-out .25s all;
 }
 
 /* Products*/

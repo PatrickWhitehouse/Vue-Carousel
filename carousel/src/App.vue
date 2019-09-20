@@ -73,6 +73,12 @@ export default {
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       });
 
+      slider.addEventListener('transitionend', () => {
+        console.log('transition ended');
+        if( slideCount == sliderItems.length + 1){
+          console.log('limit hit');
+        }
+      });
 
     }
   }
