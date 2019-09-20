@@ -14,6 +14,7 @@
       :url="product.url"/>
       </ul>
     </div>
+    <button class="prev">Previous</button>
     <button class="next">Next</button>
   </div>
 </template>
@@ -30,8 +31,7 @@ export default {
   },
   data(){
     return{
-      products: JSON.carouselData,
-      slides: 3
+      products: JSON.carouselData
     }
   },
   mounted(){
@@ -39,9 +39,11 @@ export default {
   },
   methods: {
     slider(){
+      
       const slider = document.querySelector('.products');
       const sliderItems = document.querySelectorAll('.product');
       const nextBtn = document.querySelector('.next');
+      const prevBtn = document.querySelector('.prev');
 
       let slideCount = 1;
       const sliderItemSize = sliderItems[0].clientWidth;
@@ -50,6 +52,13 @@ export default {
         slideCount++;
         slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
       });
+
+      prevBtn.addEventListener('click', ()=>{
+        slideCount--;
+        slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
+      });
+
+
     }
   }
 
