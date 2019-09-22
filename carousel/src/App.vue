@@ -186,7 +186,7 @@ a:focus {
     &::before {
       content: "";
       position: absolute;
-      background: red;
+      background: $red;
       right: 0;
       left: 0;
       top: 0;
@@ -205,7 +205,8 @@ a:focus {
   &:hover {
     transition: ease-in-out 0.25s all;
     transform: translateY(-3px);
-    &__action {
+    .product__action {
+      color: #FFF;
       &::before {
         transform: scaleX(1);
         transition: ease-in-out 0.25s all;
