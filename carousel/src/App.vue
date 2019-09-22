@@ -177,9 +177,12 @@ a:focus {
       font-size: 30px;
     }
     &.prev {
-      margin-right: 5px;
+      margin-right: 25px;
       &::before {
         content: "<";
+      }
+      @media screen and (min-width: $screen__m) {
+        margin-right: 10px;
       }
     }
   }
