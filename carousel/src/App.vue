@@ -56,8 +56,10 @@ export default {
 
       // Clone first product and add to the end. Clone last product, add to start.
       const firstItem = slider.firstChild.cloneNode(true);
+      const secondItem = sliderItems[1].cloneNode(true);
       const lastItem = slider.lastChild.cloneNode(true);
       slider.append(firstItem);
+      slider.append(secondItem);
       slider.prepend(lastItem);
 
       // Start slide on 2nd item.
@@ -81,12 +83,16 @@ export default {
       });
 
       slider.addEventListener("transitionend", () => {
+        console.log(slideCount);
         if (slideCount == sliderItems.length) {
           slider.style.transition = "none";
           slideCount = sliderItems.length - slideCount;
           slider.style.transform =
             "translateX(" + -sliderItemSize * slideCount + "px)";
+        } else{
+          
         }
+        
       });
     }
   }
