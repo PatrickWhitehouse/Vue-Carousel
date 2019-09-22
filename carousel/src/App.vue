@@ -4,15 +4,16 @@
     <div class="wrapper">
       <p>This carousel was made using Vue. I decided to make this in Vue as I have never really used Vue before and thought it would be a good excercise to grasp the basics. The products are pulled in using the data from the JSON file.</p>
       <ul class="products">
-      <Product 
-      v-for="product in products" 
-      :key="product.code" 
-      :name="product.name" 
-      :currency="product.price.currency" 
-      :price="product.price.formattedValue" 
-      :image="product.productImageUrl"
-      :alt="product.productImageAltText"
-      :url="product.url"/>
+        <Product
+          v-for="product in products"
+          :key="product.code"
+          :name="product.name"
+          :currency="product.price.currency"
+          :price="product.price.formattedValue"
+          :image="product.productImageUrl"
+          :alt="product.productImageAltText"
+          :url="product.url"
+        />
       </ul>
       <button class="action prev">Previous</button>
       <button class="action next">Next</button>
@@ -21,31 +22,29 @@
 </template>
 
 <script>
-
 import Product from "./components/Product";
 import JSON from "./assets/data.json";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Product
   },
-  data(){
-    return{
+  data() {
+    return {
       products: JSON.carouselData
-    }
+    };
   },
-  mounted(){
+  mounted() {
     this.slider();
   },
   methods: {
-    slider(){
-      
+    slider() {
       // Get items, slider wrapper, slider items and actions
-      const slider = document.querySelector('.products');
-      const sliderItems = document.querySelectorAll('.product');
-      const nextBtn = document.querySelector('.next');
-      const prevBtn = document.querySelector('.prev');
+      const slider = document.querySelector(".products");
+      const sliderItems = document.querySelectorAll(".product");
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
 
       // Counter to keep track of slide selected.
       let slideCount = 1;
@@ -61,77 +60,83 @@ export default {
 
       // Start slide on 2nd item.
 
-       slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
-      
+      slider.style.transform =
+        "translateX(" + -sliderItemSize * slideCount + "px)";
+
       // Grab buttons
-      nextBtn.addEventListener('click', ()=>{
-        slider.style.transition = 'ease-in-out .25s all';
+      nextBtn.addEventListener("click", () => {
+        slider.style.transition = "ease-in-out .25s all";
         slideCount++;
-        slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
+        slider.style.transform =
+          "translateX(" + -sliderItemSize * slideCount + "px)";
       });
 
-      prevBtn.addEventListener('click', ()=>{
-        slider.style.transition = 'ease-in-out .25s all';
+      prevBtn.addEventListener("click", () => {
+        slider.style.transition = "ease-in-out .25s all";
         slideCount--;
-        slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
+        slider.style.transform =
+          "translateX(" + -sliderItemSize * slideCount + "px)";
       });
 
-      slider.addEventListener('transitionend', () => {
-        if( slideCount == sliderItems.length){
-          slider.style.transition = 'none';
+      slider.addEventListener("transitionend", () => {
+        if (slideCount == sliderItems.length) {
+          slider.style.transition = "none";
           slideCount = sliderItems.length - slideCount;
-          slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
+          slider.style.transform =
+            "translateX(" + -sliderItemSize * slideCount + "px)";
         }
       });
-
     }
   }
-
-}
+};
 </script>
 
 <style lang="scss">
-
 /* Variables */
 $red: #df1417;
-$blue: #009FB4;
+$blue: #009fb4;
 $screen__s: 640px;
 $screen__m: 768px;
 
-*{
+* {
   box-sizing: border-box;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
-ul, li{
+ul,
+li {
   padding: 0;
   margin: 0;
 }
 
-a, a:link, a:active, a:visited{
+a,
+a:link,
+a:active,
+a:visited {
   color: $blue;
   text-decoration: none;
   font-weight: 700;
-  transition: ease-in-out all .25s;
+  transition: ease-in-out all 0.25s;
 }
 
-a:hover, a:focus{
+a:hover,
+a:focus {
   color: darken($blue, 10%);
-  transition: ease-in-out all .25s;
+  transition: ease-in-out all 0.25s;
 }
 
-
-.wrapper{
+.wrapper {
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
 }
 
 #app {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -140,55 +145,79 @@ a:hover, a:focus{
 }
 
 /* Product wrapper */
-.products{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
+.products {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 /* Products*/
-.product{
+.product {
+  display: inline-block;
+  padding: 10px;
+  min-width: 100%;
+  transition: ease-in-out 0.25s all;
+  font-weight: 700;
+  img {
+    margin: auto;
+  }
+
+  &__name,
+  &__price {
+    display: block;
+  }
+
+  &__price,
+  &__action,
+  &__name {
+    margin-top: 15px;
+  }
+
+  &__action {
     display: inline-block;
-    padding: 10px;
-    min-width: 100%;
-    transition: ease-in-out .25s all;
-    font-weight: 700;
-    img{
-        margin: auto;
+    padding: 10px 15px;
+    border: 2px solid $red;
+    border-radius: 4px;
+    font-size: inherit;
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      background: red;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: ease-in-out 0.25s all;
     }
+  }
 
-    &__name, &__price{
-      display: block; 
-    }
+  &__name {
+    min-height: 45px;
+  }
 
-    &__price, &__action, &__name{
-      margin-top: 15px;
+  &:hover {
+    transition: ease-in-out 0.25s all;
+    transform: translateY(-3px);
+    &__action {
+      &::before {
+        transform: scaleX(1);
+        transition: ease-in-out 0.25s all;
+      }
     }
+  }
 
-    &__action{
-        display: inline-block;
-        padding: 10px 15px;
-        border: 2px solid $red;
-        border-radius: 4px;
-        font-size: inherit;
-        font-weight: 400;
-        cursor: pointer;
-    }
-
-    &__name{
-      min-height: 45px;
-    }
-
-    &:hover{
-      transition: ease-in-out .25s all;
-      transform: translateY(-3px);
-    }
-
-    @media screen and (min-width: $screen__s) {
-      min-width: 50%;
-    }
-    @media screen and (min-width: $screen__m) {
-      min-width: (100% / 3);
-    }
+  @media screen and (min-width: $screen__s) {
+    min-width: 50%;
+  }
+  @media screen and (min-width: $screen__m) {
+    min-width: (100% / 3);
+  }
 }
 </style>
