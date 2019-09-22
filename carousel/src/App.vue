@@ -58,9 +58,12 @@ export default {
       const firstItem = slider.firstChild.cloneNode(true);
       const secondItem = sliderItems[1].cloneNode(true);
       const lastItem = slider.lastChild.cloneNode(true);
+      const secondLastItem = sliderItems[sliderItems.length - 2].cloneNode(true);
       slider.append(firstItem);
       slider.append(secondItem);
       slider.prepend(lastItem);
+      slider.prepend(secondLastItem);
+      
 
       // Start slide on 2nd item.
 
