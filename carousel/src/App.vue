@@ -86,7 +86,6 @@ export default {
       });
 
       slider.addEventListener("transitionend", () => {
-        console.log(slideCount);
         if (slideCount == sliderItems.length) {
           slider.style.transition = "none";
           slideCount = sliderItems.length - slideCount;
