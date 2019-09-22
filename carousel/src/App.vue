@@ -151,11 +151,17 @@ a:focus {
 .actions {
   display: flex;
   justify-content: flex-end;
+  margin-top: 15px;
   .action {
     font-size: 0;
+    background-color: transparent;
+    border:0;
+    outline :0;
+    cursor: pointer;
+    color: $red;
     &::before {
       content: ">";
-      font-size: 22px;
+      font-size: 30px;
     }
     &.prev {
       margin-right: 5px;
