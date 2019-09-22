@@ -15,8 +15,10 @@
           :url="product.url"
         />
       </ul>
-      <button class="action prev">Previous</button>
-      <button class="action next">Next</button>
+      <div class="actions">
+        <button class="action prev">Previous</button>
+        <button class="action next">Next</button>
+      </div>
     </div>
   </div>
 </template>
@@ -132,6 +134,7 @@ a:focus {
   width: 90%;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
 }
 
 #app {
@@ -143,6 +146,18 @@ a:focus {
   color: #1e1e1d;
   margin-top: 60px;
 }
+
+/* Buttons, prev and next */
+  .actions{
+    display: flex;
+    justify-content: flex-end;
+    .action{
+      &::before{
+        font-size: 22px;
+        content: ">";
+      }
+    }
+  }
 
 /* Product wrapper */
 .products {
@@ -176,7 +191,7 @@ a:focus {
   &__action {
     display: inline-block;
     padding: 10px 15px;
-    border: 2px solid $red;
+    border: 2px solid #1e1e1d;
     border-radius: 4px;
     font-size: inherit;
     font-weight: 400;
@@ -186,7 +201,7 @@ a:focus {
     &::before {
       content: "";
       position: absolute;
-      background: $red;
+      background: #1e1e1d;
       right: 0;
       left: 0;
       top: 0;
@@ -213,7 +228,7 @@ a:focus {
       }
     }
   }
-
+  
   @media screen and (min-width: $screen__s) {
     min-width: 50%;
   }
