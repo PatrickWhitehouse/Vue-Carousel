@@ -42,5 +42,9 @@ export default {
     img{
         margin: auto;
     }
+
+    &__action{
+        background-color: $red;
+    }
 }
 </style>

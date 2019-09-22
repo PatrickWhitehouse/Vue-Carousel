@@ -78,7 +78,6 @@ export default {
 
       slider.addEventListener('transitionend', () => {
         if( slideCount == sliderItems.length){
-          console.log('limit hit');
           slider.style.transition = 'none';
           slideCount = sliderItems.length - slideCount;
           slider.style.transform = 'translateX(' + (-sliderItemSize * slideCount) + 'px)';
@@ -91,7 +90,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+
+$red : #df1417;
+
 *{
   box-sizing: border-box;
 }
