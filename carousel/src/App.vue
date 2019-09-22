@@ -94,6 +94,7 @@ export default {
 
 /* Variables */
 $red: #df1417;
+$blue: #009FB4;
 $screen__s: 640px;
 $screen__m: 768px;
 
@@ -110,10 +111,21 @@ ul, li{
   margin: 0;
 }
 
+a, a:link, a:active, a:visited{
+  color: $blue;
+  text-decoration: none;
+  font-weight: 700;
+  transition: ease-in-out all .25s;
+}
+
+a:hover, a:focus{
+  color: darken($blue, 10%);
+  transition: ease-in-out all .25s;
+}
+
 .wrapper{
   width: 90%;
   margin: 0 auto;
-  outline: 3px solid red;
   overflow: hidden;
 }
 
@@ -138,13 +150,13 @@ ul, li{
     display: inline-block;
     padding: 10px;
     min-width: 100%;
+    transition: ease-in-out .25s all;
     img{
         margin: auto;
     }
 
     &__name, &__price{
-      display: block;
-      font-weight: 700;
+      display: block; 
     }
 
     &__price, &__action, &__name{
@@ -152,13 +164,20 @@ ul, li{
     }
 
     &__action{
-        background-color: $red;
         display: inline-block;
         padding: 10px 15px;
+        border: 2px solid $red;
+        border-radius: 4px;
     }
 
     &__name{
       min-height: 45px;
+      font-weight: 700;
+    }
+
+    &:hover{
+      transition: ease-in-out .25s all;
+      transform: translateY(-3px);
     }
 
     @media screen and (min-width: $screen__s) {
