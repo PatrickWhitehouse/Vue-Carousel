@@ -148,16 +148,23 @@ a:focus {
 }
 
 /* Buttons, prev and next */
-  .actions{
-    display: flex;
-    justify-content: flex-end;
-    .action{
-      &::before{
-        font-size: 22px;
-        content: ">";
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  .action {
+    font-size: 0;
+    &::before {
+      content: ">";
+      font-size: 22px;
+    }
+    &.prev {
+      margin-right: 5px;
+      &::before {
+        content: "<";
       }
     }
   }
+}
 
 /* Product wrapper */
 .products {
@@ -221,14 +228,14 @@ a:focus {
     transition: ease-in-out 0.25s all;
     transform: translateY(-3px);
     .product__action {
-      color: #FFF;
+      color: #fff;
       &::before {
         transform: scaleX(1);
         transition: ease-in-out 0.25s all;
       }
     }
   }
-  
+
   @media screen and (min-width: $screen__s) {
     min-width: 50%;
   }
