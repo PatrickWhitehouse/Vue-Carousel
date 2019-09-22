@@ -92,7 +92,8 @@ export default {
 
 <style lang="scss">
 
-$red : #df1417;
+/* Variables */
+$red: #df1417;
 
 *{
   box-sizing: border-box;
@@ -121,5 +122,41 @@ ul, li{
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+/* Product wrapper */
+.products{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+/* Products*/
+.product{
+    display: inline-block;
+    padding: 10px;
+    min-width: (100% / 3);
+    img{
+        margin: auto;
+    }
+
+    &__name, &__price{
+      display: block;
+    }
+
+    &__price, &__action{
+      margin-top: 15px;
+    }
+
+    &__action{
+        background-color: $red;
+        display: inline-block;
+        padding: 10px 15px;
+    }
+
+    &__name{
+      min-height: 45px;
+    }
+    
 }
 </style>

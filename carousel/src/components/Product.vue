@@ -21,30 +21,3 @@ export default {
     }
 }
 </script>
-
-<style lang="scss">
-
-/* Product wrapper */
-.products{
-    display: flex;
-    flex-wrap: nowrap;
-    width: 100%;
-}
-
-/* Products*/
-.product{
-    display: inline-block;
-    padding: 10px;
-    min-width: (100% / 3);
-    > * {
-        display: block;
-    }
-    img{
-        margin: auto;
-    }
-
-    &__action{
-        background-color: $red;
-    }
-}
-</style>
