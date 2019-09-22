@@ -94,6 +94,8 @@ export default {
 
 /* Variables */
 $red: #df1417;
+$screen__s: 640px;
+$screen__m: 768px;
 
 *{
   box-sizing: border-box;
@@ -116,11 +118,11 @@ ul, li{
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #1e1e1d;
   margin-top: 60px;
 }
 
@@ -135,16 +137,17 @@ ul, li{
 .product{
     display: inline-block;
     padding: 10px;
-    min-width: (100% / 3);
+    min-width: 100%;
     img{
         margin: auto;
     }
 
     &__name, &__price{
       display: block;
+      font-weight: 700;
     }
 
-    &__price, &__action{
+    &__price, &__action, &__name{
       margin-top: 15px;
     }
 
@@ -157,6 +160,12 @@ ul, li{
     &__name{
       min-height: 45px;
     }
-    
+
+    @media screen and (min-width: $screen__s) {
+      min-width: 50%;
+    }
+    @media screen and (min-width: $screen__m) {
+      min-width: (100% / 3);
+    }
 }
 </style>
