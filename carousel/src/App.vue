@@ -168,6 +168,8 @@ a:hover, a:focus{
         padding: 10px 15px;
         border: 2px solid $red;
         border-radius: 4px;
+        font-size: inherit;
+        cursor: pointer;
     }
 
     &__name{
