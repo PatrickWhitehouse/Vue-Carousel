@@ -123,6 +123,7 @@ a:hover, a:focus{
   transition: ease-in-out all .25s;
 }
 
+
 .wrapper{
   width: 90%;
   margin: 0 auto;
@@ -151,6 +152,7 @@ a:hover, a:focus{
     padding: 10px;
     min-width: 100%;
     transition: ease-in-out .25s all;
+    font-weight: 700;
     img{
         margin: auto;
     }
@@ -169,12 +171,12 @@ a:hover, a:focus{
         border: 2px solid $red;
         border-radius: 4px;
         font-size: inherit;
+        font-weight: 400;
         cursor: pointer;
     }
 
     &__name{
       min-height: 45px;
-      font-weight: 700;
     }
 
     &:hover{
