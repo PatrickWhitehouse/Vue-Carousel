@@ -49,7 +49,7 @@ export default {
       const prevBtn = document.querySelector(".prev");
 
       // Counter to keep track of slide selected.
-      let slideCount = 1;
+      let slideCount = 2;
 
       // Get width of image so the slider can slide that amount, also grabs the first image to make sure its hidden.
       const sliderItemSize = sliderItems[0].clientWidth;
@@ -93,7 +93,12 @@ export default {
           slider.style.transform =
             "translateX(" + -sliderItemSize * slideCount + "px)";
         } else{
-          
+          if (slideCount == -1) {
+          slider.style.transition = "none";
+          slideCount = sliderItems.length - 1;
+          slider.style.transform =
+            "translateX(" + -sliderItemSize * slideCount + "px)";
+        }
         }
         
       });
